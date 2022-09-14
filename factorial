@@ -7,6 +7,6 @@ def factorial(x):
         fact*=i
     return fact
 if n>m:
-    print("C=",factorial(n)/(factorial(m)*(factorial(n-m))))
+    print("numarul de combinari din",n,"elemente cu ",m," este =",factorial(n)/(factorial(m)*(factorial(n-m))))
 else:
     print("functia nu este definita")
