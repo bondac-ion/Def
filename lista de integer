@@ -1,0 +1,9 @@
+def lista_int():
+    n=int(input("Numarul e elemente este:"))
+    lista=[]
+    for i in range(n):
+        element=int(input())
+        lista.append(element)
+    return lista
+lista1=lista_int()
+print("Lista de integer este ",lista1)
