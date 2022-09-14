@@ -4,7 +4,9 @@ c=int(input())
 d=int(input())
 def suma(x,y,z,q):
     return (x*q+z*y)/(y*q)
-print(suma(a,b,c,d))
+if b!=0 and d!=0:
+    print(suma(a,b,c,d))
 def produsul(x,y,z,q):
     return (x*z)/(y*q)
-print(produsul(a,b,c,d))
+if b!=0 and d!=0:
+    print(produsul(a,b,c,d))
