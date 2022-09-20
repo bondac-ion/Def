@@ -1,0 +1,70 @@
+a,b=int(input()),int(input())
+def suma(x,y):
+    return x+y
+def produs(x,y):
+    return x*y
+def media_aritmetica(x,y):
+    return (x+y)/2
+#algoritmul lui euclid
+def cel_mai_mare_divizor(x, y):
+    while y:
+        x, y = y, x % y
+    return x
+def cel_mai_mic_multiplu(x,y):
+    return abs(x*y)/cel_mai_mare_divizor(x,y) 
+def num_minim(x,y):
+    if x<y:
+        return x
+    elif x>y:
+        return y
+    else:
+        return print("valorile sunt egale =",x)
+def num_maxim(x,y):
+    if x<y:
+        return y
+    elif x>y:
+        return x
+    else:
+        return print("valorile sunt egale =",x)
+def suma_num(x,y):
+    return f"{x}+{y}={x+y}"
+def produs_num(x,y):
+    return f"{x}*{y}={x+y}"
+def divizorii(x,y):
+    div=[]
+    for i in range(1,min(x,y)+1):
+        if x%i==y%i==0:
+            div.append(i)
+    return div
+def multipli(x,y):
+    multipli=[]
+    for i in range(1,6):
+        multipli.append(cel_mai_mic_multiplu(x,y)*i)
+    return multipli
+def cifre_comune(x,y):
+    return list(set(str(x)).intersection(str(y)))
+def cifre_1nr(x,y):
+    return list(set(str(x)).difference(set(str(y))))
+def nr_divizori(x):
+    i=0
+    for i in range(1,x+1):
+        if x%i==0:
+            i+=1
+    return i
+def prietene(x,y):
+    if nr_divizori(x)==nr_divizori(y):
+        return "PRIETENE"
+    else:
+        return "Ne PRIETENE"
+print(suma(a,b))
+print(produs(a,b))
+print(media_aritmetica(a,b))
+print(cel_mai_mare_divizor(a,b))
+print(cel_mai_mic_multiplu(a,b))
+print(num_minim(a,b))
+print(num_maxim(a,b))
+print(suma_num(a,b))
+print(produs_num(a,b))
+print(cifre_comune(a,b))
+print(cifre_1nr(a,b))
+print(prietene(a,b))
