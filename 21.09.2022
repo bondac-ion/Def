@@ -1,0 +1,25 @@
+a,b,c=int(input()),int(input()),int(input())
+def diz_comuni(x,y):
+    while y:
+        x, y = y, x % y
+    return x
+def multiplu(x,y):
+    return x*y/diz_comuni(x,y)
+def valoare_max(x,y,z):
+    if x>=y and x>=z:
+        return x
+    elif y>=z and y>=x:
+        return y
+    else:
+        return z
+def valoare_min(x,y,z):
+    if x<=y and x<=z:
+        return x
+    elif y<=z and y<=x:
+        return y
+    else:
+        return z
+print(diz_comuni(a,diz_comuni(b,c)))
+print(multiplu(a,multiplu(b,c)))
+print(valoare_max(a,b,c))
+print(valoare_min(a,b,c))
