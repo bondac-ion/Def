@@ -1,0 +1,72 @@
+import math
+a,b,c=int(input()),int(input()),int(input())
+def diz_comuni(x,y):
+    while y:
+        x, y = y, x % y
+    return x
+def valoare_max(x,y,z):
+    if x>=y and x>=z:
+        return x
+    elif y>=z and y>=x:
+        return y
+    else:
+        return z
+def multiplu(x,y,z):
+    i=valoare_max(x,y,z)
+    while i>=valoare_max(x,y,z):
+        i+=1
+        if i%x==i%y==i%z==0:
+            break
+    return i
+def valoare_min(x,y,z):
+    if x<=y and x<=z:
+        return x
+    elif y<=z and y<=x:
+        return y
+    else:
+        return z
+def divizori(x,y,z):
+    div=[]
+    for i in range(1,valoare_max(x,y,z)):
+        if x%i==y%i==z%i==0:
+            div.append(i)
+    return div
+def multip(x,y,z):
+    multipli=[]
+    i=valoare_max(x,y,z)
+    while len(multipli)!=3:
+        if i%x==i%y==i%z==0:
+            multipli.append(i)
+        i+=1
+    return multipli
+def triunghi(x,y,z):
+    i=False
+    if x+y>z and x+z>y and y+z>x:
+        i=True
+    return i
+def perimetru(x,y,z):
+    if triunghi(a,b,c)==True:
+        return x+y+z
+def aria(x,y,z):
+    if triunghi(a,b,c)==True:
+        return math.sqrt((perimetru(a,b,c)/2)*((perimetru(a,b,c)/2)-a)*((perimetru(a,b,c)/2)-b)*(perimetru(a,b,c)/2)-c)
+def e_p(x,y,z):
+    if (y**2-(4*x*z))==0:
+        return -(y/(2*a))
+    elif (y**2-(4*x*z))<0:
+        return "nu are solutie"
+    else:
+        sol=[]
+        sol1=(-y+math.sqrt(y**2-(4*x*z)))/2*x
+        sol2=(-y-math.sqrt(y**2-(4*x*z)))/2*x
+        sol.append(sol1,sol2)
+        return sol
+print(diz_comuni(a,diz_comuni(b,c)))
+print(multiplu(a,b,c))
+print(valoare_max(a,b,c))
+print(valoare_min(a,b,c))
+print(divizori(a,b,c))
+print(multip(a,b,c))
+print(perimetru(a,b,c))
+print(aria(a,b,c))
+print(e_p(a,b,c))
